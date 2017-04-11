@@ -1,5 +1,5 @@
 # Builds a docker gui image
-FROM cgspeck/dockergui
+FROM cgspeck/dockergui:x11rdp1.3
 
 #########################################
 ##        ENVIRONMENTAL CONFIG         ##
