@@ -1,5 +1,5 @@
 # Builds a docker gui image
-FROM scratch2
+FROM cgspeck/dockergui
 
 #########################################
 ##        ENVIRONMENTAL CONFIG         ##
