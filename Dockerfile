@@ -15,8 +15,8 @@ ENV GROUP_ID=100
 ENV APP_NAME OKULAR
 
 # Default resolution, change if you like
-ENV WIDTH=1280
-ENV HEIGHT=720
+ENV WIDTH=1600
+ENV HEIGHT=900
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
