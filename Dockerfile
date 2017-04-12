@@ -32,7 +32,17 @@ RUN apt-get update
 RUN apt-get install -y fluxbox
 RUN apt-get install -y okular okular-extra-backends
 
-RUN echo 'exec startfluxbox' >> /root/.xinitrc
+# extra stuff for fluxbox
+RUN apt-get install -y python-xdg
+
+# RUN echo 'exec startfluxbox' >> /root/.xinitrc
+RUN echo '/usr/bin/openbox-session' >> /nobody/.xsession
+
+RUN cp /etc/xrdp/startwm.sh /etc/xrdp/startwm.sh.bak
+
+COPY startwm.sh /etc/xrdp/startwm.sh
+
+RUN chmod +x /etc/xrdp/startwm.sh
 
 RUN mkdir -p /root/.fluxbox
 
