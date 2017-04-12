@@ -1,0 +1,15 @@
+version: '3.1'
+
+# Declare the container block
+services:
+  # Configure the app container for local development
+  okular:
+    build: .
+    image: okular:latest
+    volumes:
+      - ~/Downloads:/downloads
+    environment:
+      TZ: 'Australia/Melbourne'
+    ports:
+      - "3389:3389"
+      - "8080:8080"

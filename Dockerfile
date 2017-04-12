@@ -29,7 +29,16 @@ RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main universe 
 
 # Install packages needed for app
 RUN apt-get update
+RUN apt-get install -y fluxbox
 RUN apt-get install -y okular okular-extra-backends
+
+RUN echo 'exec startfluxbox' >> /root/.xinitrc
+
+RUN mkdir -p /root/.fluxbox
+
+COPY fluxbox_startup /root/.fluxbox/startup
+
+RUN chmod +x /root/.fluxbox/startup
 
 #########################################
 ##          GUI APP INSTALL            ##

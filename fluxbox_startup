@@ -1,0 +1,8 @@
+fbsetbg -l # sets the last background set, very useful and recommended.
+# In the below commands the ampersand symbol (&) is required on all applications that do not terminate immediately.
+# Failure to provide them will cause Fluxbox not to start.
+idesk &
+xterm &
+okular &
+# exec is for starting Fluxbox itself, do not put an ampersand (&) after this or Fluxbox will exit immediately.
+exec /usr/bin/fluxbox
