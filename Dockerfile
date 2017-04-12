@@ -24,8 +24,8 @@ CMD ["/sbin/my_init"]
 #########################################
 ##    REPOSITORIES AND DEPENDENCIES    ##
 #########################################
-RUN echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt xenial main universe restricted' > /etc/apt/sources.list
-RUN echo 'deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-updates main universe restricted' >> /etc/apt/sources.list
+RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe restricted' > /etc/apt/sources.list
+RUN echo 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main universe restricted' >> /etc/apt/sources.list
 
 # Install packages needed for app
 RUN apt-get update
