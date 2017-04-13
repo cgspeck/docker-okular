@@ -15,8 +15,8 @@ ENV GROUP_ID=100
 ENV APP_NAME OKULAR
 
 # Default resolution, change if you like
-ENV WIDTH=1280
-ENV HEIGHT=720
+ENV WIDTH=1600
+ENV HEIGHT=900
 
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
@@ -57,10 +57,13 @@ RUN chmod +x /root/.fluxbox/startup
 # Install steps for X app
 
 # Copy X app start script to right location
+COPY firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
 COPY startapp.sh /startapp.sh
 
 #########################################
 ##         EXPORTS AND VOLUMES         ##
 #########################################
 
-# Place whater volumes and ports you want exposed here:
+VOLUME ["/config"]
+EXPOSE 3389 8080
