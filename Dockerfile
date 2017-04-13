@@ -38,10 +38,13 @@ RUN apt-get install -y okular okular-extra-backends
 # Install steps for X app
 
 # Copy X app start script to right location
+COPY firstrun.sh /etc/my_init.d/firstrun.sh
+RUN chmod +x /etc/my_init.d/firstrun.sh
 COPY startapp.sh /startapp.sh
 
 #########################################
 ##         EXPORTS AND VOLUMES         ##
 #########################################
 
-# Place whater volumes and ports you want exposed here:
+VOLUME ["/config"]
+EXPOSE 3389 8080
